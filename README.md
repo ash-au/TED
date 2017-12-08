@@ -6,10 +6,10 @@ The first step to use beta TED API is to create a developer account on beta dev 
 ## Beta release features
 For this release we've included following features
 
-host_url: https://slot2.org005.t-dev.telstra.net <br>
-oauth_path: [/v1/oauth/token](https://slot2.org005.t-dev.telstra.net/v1/oauth/token) <br>
-subscription_path: [/v2/messages/provisioning/subscriptions](https://slot2.org005.t-dev.telstra.net/v2/messages/provisioning/subscriptions) <br>
-get_event: [/v1/eventdetection/events/simswap](https://slot2.org005.t-dev.telstra.net/v1/eventdetection/events/simswap) <br>
+host\_url: https://slot2.org005.t-dev.telstra.net <br>
+oauth\_path: [/v1/oauth/token](https://slot2.org005.t-dev.telstra.net/v1/oauth/token) <br>
+subscription\_path: [/v2/messages/provisioning/subscriptions](https://slot2.org005.t-dev.telstra.net/v2/messages/provisioning/subscriptions) <br>
+get\_event: [/v1/eventdetection/events/simswap](https://slot2.org005.t-dev.telstra.net/v1/eventdetection/events/simswap) <br>
 
 
 | Feature | Description |
@@ -24,6 +24,7 @@ To get access to the API, go to MyApps page and create a new application with `A
 
 ## Authentication
 To get an OAuth 2.0 Authentication token, pass through your Consumer Key and Consumer Secret that you received when you registered for the Messages API key. The `grant_type` should be left as `client_credentials` and the scope as `NSMS`. The token will expire in one hour. Get your keys by registering at our [Developer Portal](https://test-apac-demo3.devportal.apigee.com/).
+
 ```sh
 #!/bin/bash
 # Obtain these keys from the Telstra Developer Portal
@@ -43,6 +44,7 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
 
 ## Create subscription
 Invoke subscription API to create one or more subscriptions
+
 ```sh
 #!/bin/bash
 curl -X POST \
@@ -63,7 +65,8 @@ Parameters for the subscription API are;
 | `phoneNumbers` | Y | List of numbers to create a subscription for |
 | `notifyURL` | N | A callback URL that will be POSTed to whenever a new message arrives at this destination address. If this is not provided then you can make use the Get Replies API to poll for messages |
 ### Response
-A typical response will look like;
+A typical response will look like
+
 ```
 {
     "todo": "Umesh to provide information"
@@ -77,6 +80,7 @@ The fields mean;
 
 ## Get Event (sim swap)
 To get sim swap event invoke following API
+
 ```sh
 #!/bin/bash
 # Use the TED API to get events
@@ -101,6 +105,7 @@ A number of parameters can be used in this call, these are;
 
 ### Response
 A typical response will look like;
+
 ```json
 {
     "todo": "Umesh to add this"
